@@ -1,18 +1,17 @@
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 import styles from './product-grid.module.css';
-
+import ProductCard from '../product-card/product-card';
 
 export default function ProductGrid() {
   const [products, setProducts] = useState([]);
-  
+
   useEffect(() => {
     const getData = async () => {
       const data = await fetch('/api/products');
-      const filteredData = await data.json();
+      const productData = await data.json();
 
-      console.log('F', filteredData)
-      setProducts(filteredData);
+      setProducts(productData);
     };
 
     getData();
@@ -20,9 +19,9 @@ export default function ProductGrid() {
 
   return (
     <div className={styles.productGrid}>
-      {products.map((ProductCard) => {
-        console.log('ProductCard', ProductCard)
-        return <div key={ProductCard._id}>sadas</div>
+      {products.map((productCard) => {
+        console.log(productCard);
+        return <ProductCard key={ProductCard._id} product={productCard} />;
       })}
     </div>
   );
