@@ -1,4 +1,5 @@
 import './globals.css';
+import { BasketContextProvider } from '@/context/basket';
 import { oswaldFont } from '@/utils/fonts';
 
 export const metadata = {
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={oswaldFont.className}>{children}</body>
+      <body className={oswaldFont.className}>
+        <BasketContextProvider>{children}</BasketContextProvider>
+      </body>
     </html>
   );
 }
