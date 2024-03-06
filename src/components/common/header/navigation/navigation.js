@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './navigation.module.css';
 import { FaBars } from 'react-icons/fa';
 import { FaCartShopping } from 'react-icons/fa6';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useBasket } from '@/context/basket';
 import Basket from '@/components/cart/cart';
@@ -45,8 +45,8 @@ const Navigation = ({ logo }) => {
         <div className={styles.actions}>
           {/* Menu */}
           <div onClick={() => setIsOpenCart(!isOpenCart)}>
-            <FaCartShopping className={`${styles.bars}`}></FaCartShopping>
             {basket.length}
+            <FaCartShopping className={`${styles.bars}`}></FaCartShopping>
           </div>
           {/* Basket */}
           <div onClick={() => setIsOpen(!isOpen)}>
@@ -67,7 +67,7 @@ const Navigation = ({ logo }) => {
       </div>
 
       {/* Cart */}
-      <div className={`${styles.cart} ${isOpenCart ? styles.openCart : ''}`} onClick={() => setIsOpenCart(false)}>
+      <div className={`${styles.cart} ${isOpenCart ? styles.openCart : ''}`}>
         <div className={styles.empty}>
           <Basket />
         </div>

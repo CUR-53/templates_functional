@@ -1,0 +1,23 @@
+.basketItem button {
+  background-color: #848484;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.basketItem p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 10px;
+}
+
+.basketItem span {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
