@@ -1,12 +1,13 @@
 'use client';
 import Link from 'next/link';
 import styles from './navigation.module.css';
+import Image from 'next/image';
+import Basket from '@/components/cart/cart';
+
 import { FaBars } from 'react-icons/fa';
 import { FaCartShopping } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useBasket } from '@/context/basket';
-import Basket from '@/components/cart/cart';
 
 const menuData = [
   {
